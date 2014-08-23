@@ -1,5 +1,5 @@
-python-sockets
-==============
+python-socket
+=============
 
 Test app in Python: server and client.
 

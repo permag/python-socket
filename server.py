@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from socket import socket, gethostbyname, AF_INET, SOCK_DGRAM
-import sys, time
+import sys, datetime
 
 PORT_NUMBER = 5000
 SIZE = 1024
@@ -15,12 +15,14 @@ def server():
     try:
         while True:
             (data, addr) = my_socket.recvfrom(SIZE)
-            print(data, addr)
+            date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+            print('{0}\t{1}\n{2}\n'.format(addr[0], date, data))
+            
     except KeyboardInterrupt:
         print("Server closed down by user") 
         sys.exit(0)
     except:
-        print("Server error, closing down.")
+        print("Server error, closing down")
         sys.exit(1)
 
 

@@ -22,7 +22,7 @@ def client():
             message = raw_input("Send message to server: ")
             my_socket.sendto(message, (SERVER_IP, PORT_NUMBER))
     except KeyboardInterrupt:
-        print("Client exited by user.")
+        print("Client exited by user")
         sys.exit(0)
 
 
